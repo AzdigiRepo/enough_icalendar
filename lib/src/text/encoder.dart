@@ -35,6 +35,9 @@ class RecurrenceRuleToTextEncoder extends Converter<Recurrence, String> {
     if (languageCode.startsWith('de')) {
       return RruleL10nDe.create();
     }
+    if (languageCode.startsWith('vi')) {
+      return RruleL10nVi.create();
+    }
     return RruleL10nEn.create();
   }
 

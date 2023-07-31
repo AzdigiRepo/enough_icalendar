@@ -1,13 +1,14 @@
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
+import 'package:enough_icalendar/src/text/l10n/vi.dart';
 import '../../enough_icalendar.dart';
 import 'l10n/de.dart';
 
 import 'l10n/l10n.dart';
 
 /// Supported languages
-enum SupportedLanguage { en, de }
+enum SupportedLanguage { en, de, vi }
 
 /// Encodes recurrence rules to human readable text.
 ///
@@ -20,6 +21,8 @@ class RecurrenceRuleToTextEncoder extends Converter<Recurrence, String> {
     switch (language) {
       case SupportedLanguage.en:
         return RruleL10nEn.create();
+      case SupportedLanguage.vi:
+        return RruleL10nVi.create();
       case SupportedLanguage.de:
         return RruleL10nDe.create();
     }
